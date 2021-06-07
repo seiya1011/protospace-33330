@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:create]
   before_action :set_prototype, only: [:edit,:show,:destroy,:update]
   before_action :move_to_index, only: [:edit, :update]
   def index
